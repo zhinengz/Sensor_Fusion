@@ -1,8 +1,6 @@
 ## Camera Based 2D Feature Tracking
 
-### MP.1 Data Buffer Optimization
-<font size="3">
-Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf.
+### MP.1 Create a Ring Buffer Data Structure
 
 ---
 If dataBuffer is changed from vector to a size-fixed ring buffer data structure, the following functions and operators need to be overloaded to track the starting and ending location of the buffer:
@@ -16,7 +14,7 @@ If dataBuffer is changed from vector to a size-fixed ring buffer data structure,
 
 In this design, a ring buffer is implemented based on guidance from the following link:
 https://users.cs.northwestern.edu/~riesbeck/programming/c++/stl-iterator-define.html#TOC11 to meet all above features
-</font>
+
 
 ```C++
 //Foward Declaration of iterator
