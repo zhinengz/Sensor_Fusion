@@ -18,7 +18,7 @@ In this design, a ring buffer is implemented based on guidance from the followin
 https://users.cs.northwestern.edu/~riesbeck/programming/c++/stl-iterator-define.html#TOC11 to meet all above features
 </font>
 
-```python
+```C++
 //Foward Declaration of iterator
 template <class T> class RingBufferIterator;
 //Ring Buffer
@@ -117,7 +117,7 @@ Implement detectors HARRIS, FAST, BRISK, ORB, AKAZE, and SIFT and make them sele
 
 ---
 ### HARRIS:
-```python
+```C++
 double detKeypointsHarris(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, bool bVis)
 {
   // Detector parameters
@@ -178,7 +178,7 @@ double detKeypointsHarris(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, bo
 ```
 ---
 ### FAST:
-```python
+```C++
 double detKeypointsFAST(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, bool bVis)
 {
   int threshold = 30;       // difference between intensity of the central pixel and pixels of a circle around this pixel
@@ -193,7 +193,7 @@ double detKeypointsFAST(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, bool
 ```
 ---
 ### BRISK:
-```python
+```C++
 double detKeypointsBRISK(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, bool bVis)
 {
   int Thresh = 100;
@@ -209,7 +209,7 @@ double detKeypointsBRISK(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, boo
 ```
 ---
 ### ORB:
-```python
+```C++
 double detKeypointsORB(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, bool bVis)
 {
   int nFeatures = 100;
@@ -226,7 +226,7 @@ double detKeypointsORB(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, bool 
 
 ---
 ### AKAZE:
-```python
+```C++
 double detKeypointsAKAZE(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, bool bVis)
 {
 
@@ -240,7 +240,7 @@ double detKeypointsAKAZE(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, boo
 ```
 ---
 ### SIFT:
-```python
+```C++
 double detKeypointsSIFT(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, bool bVis)
 {
   //int numFeatures = 400;
@@ -259,7 +259,7 @@ Remove all keypoints outside of a pre-defined rectangle and only use the keypoin
 
 The following code keeps the keypoints from the previous vehcle only:</font>
 
-```python
+```C++
 
 void focusOnVehicle(vector<cv::KeyPoint>& keypoints, bool bFocusOnVehicle)
 {
@@ -287,7 +287,7 @@ void focusOnVehicle(vector<cv::KeyPoint>& keypoints, bool bFocusOnVehicle)
 Implement descriptors BRIEF, ORB, FREAK, AKAZE and SIFT and make them selectable by setting a string accordingly.
 </font>
 
-```python
+```C++
 double descKeypoints(vector<cv::KeyPoint> &keypoints, cv::Mat &img, cv::Mat &descriptors, string descriptorType)
 {   //Descriptors: BRIEF, ORB, FREAK, AKAZE, SIFT
     // select appropriate descriptor
@@ -338,7 +338,7 @@ Use the K-Nearest-Neighbor matching to implement the descriptor distance ratio t
 
 ---
 ### FLANN matching
-```python
+```C++
     else if (matcherType.compare("MAT_FLANN") == 0)
     {
       if (descSource.type() != CV_32F || descRef.type() != CV_32F)
@@ -356,7 +356,7 @@ Use the K-Nearest-Neighbor matching to implement the descriptor distance ratio t
 <font size="3">
 Use the K-Nearest-Neighbor matching to implement the descriptor distance ratio test, which looks at the ratio of best vs. second-best match to decide whether to keep an associated pair of keypoints </font>
 
-```python
+```C++
 else if (selectorType.compare("SEL_KNN") == 0)
     { // k nearest neighbors (k=2)
         vector<vector<cv::DMatch>> knn_matches;
